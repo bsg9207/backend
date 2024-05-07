@@ -1,0 +1,8 @@
+### default api
+### variable
+@localBaseUrl = {{localUrl}}:{{defaultPort}}
+
+### GET ###############
+### GET /management/health/ping
+GET {{localBaseUrl}}/management/health/ping
+Content-Type: application/json; charset=UTF-8

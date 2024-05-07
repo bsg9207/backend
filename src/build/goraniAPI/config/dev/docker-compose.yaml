@@ -1,0 +1,14 @@
+version: '3.3'
+services:
+  gorani-api:
+    image: golang:1.20.4
+    dns:
+      - 8.8.8.8
+    ports:
+      - '8090:8080'
+    working_dir: /app
+    volumes:
+      - /root/gorani_backend:/app
+      - /var/log/goraniAPI:/var/log/goraniAPI
+    command: sh -c "cd ./src/build/goraniAPI && go mod tidy && go build && ./goraniAPI -build=dev"
+    restart: "on-failure"
